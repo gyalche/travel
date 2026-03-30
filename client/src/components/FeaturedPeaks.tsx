@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Compass, Mountain, Timer } from 'lucide-react';
+import { ArrowRight, ChevronDown, Compass, Mountain } from 'lucide-react';
 import { Link } from 'wouter';
 import { featuredPeaksCount, peaks } from '@/data/peaks';
 
@@ -62,7 +62,7 @@ export default function FeaturedPeaks() {
                   </div>
 
                   <div className="flex h-[calc(100%-18rem)] flex-col p-6">
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-2 gap-3">
                       <div className="rounded-2xl bg-[#f6f1ea] p-3">
                         <Mountain size={16} className="mb-2 text-[#173042]" />
                         <p className="text-[0.65rem] font-heading uppercase tracking-[0.2em] text-[#7f7260]">Height</p>
@@ -72,11 +72,6 @@ export default function FeaturedPeaks() {
                         <Compass size={16} className="mb-2 text-[#173042]" />
                         <p className="text-[0.65rem] font-heading uppercase tracking-[0.2em] text-[#7f7260]">Level</p>
                         <p className="mt-1 text-sm font-heading text-[#173042]">{peak.difficulty}</p>
-                      </div>
-                      <div className="rounded-2xl bg-[#f6f1ea] p-3">
-                        <Timer size={16} className="mb-2 text-[#173042]" />
-                        <p className="text-[0.65rem] font-heading uppercase tracking-[0.2em] text-[#7f7260]">Duration</p>
-                        <p className="mt-1 text-sm font-heading text-[#173042]">{peak.duration}</p>
                       </div>
                     </div>
 

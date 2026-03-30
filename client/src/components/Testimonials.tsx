@@ -1,135 +1,78 @@
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
 
-/**
- * Testimonials Component
- * Design: Modern Luxury Expedition
- * Features: Premium testimonial cards, star ratings, animated scroll
- */
-
-interface Testimonial {
-  name: string;
-  role: string;
-  content: string;
-  rating: number;
-  image: string;
-}
-
-const testimonials: Testimonial[] = [
+const testimonials = [
   {
-    name: 'James Mitchell',
-    role: 'Everest Summiteer',
-    content: 'An absolutely incredible experience. The guides were knowledgeable, the logistics were flawless, and the entire team made me feel safe and supported throughout the expedition.',
-    rating: 5,
-    image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=James',
+    name: 'Daniel Foster',
+    role: 'Lobuche East climber',
+    content:
+      'The route felt refined from day one. Nothing was overpromised, everything was handled cleanly, and by summit day the whole team felt calm instead of chaotic.',
   },
   {
-    name: 'Sarah Chen',
-    role: 'Kanchenjunga Climber',
-    content: 'I had always dreamed of climbing a major peak. This team turned that dream into reality with professionalism and care. Highly recommended for anyone serious about mountaineering.',
-    rating: 5,
-    image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
+    name: 'Mei Tan',
+    role: 'Mera Peak guest',
+    content:
+      'I booked because the visuals were beautiful, but what sold me afterward was the pacing. The trip had style, but it also had real mountain intelligence behind it.',
   },
   {
-    name: 'Michael Rodriguez',
-    role: 'Makalu Summiteer',
-    content: 'The pre-expedition training and acclimatization schedule were perfectly designed. I felt prepared and confident at every stage. This is premium mountaineering at its finest.',
-    rating: 5,
-    image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Michael',
+    name: 'Arjun Kapoor',
+    role: 'Private Annapurna departure',
+    content:
+      'Most operators talk about logistics. This team made logistics disappear. We were free to experience the landscape because the details were already tight.',
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="bg-white py-20 md:py-28">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <motion.div
-          className="text-center mb-16 md:mb-24"
+          className="mx-auto max-w-3xl text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.55 }}
           viewport={{ once: true }}
         >
-          <p className="text-sm font-heading text-[#b8860b] uppercase tracking-widest mb-4">
-            Success Stories
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl text-[#1a1a1a] mb-6">
-            What Our Climbers Say
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Real experiences from climbers who have trusted us with their Himalayan dreams.
+          <p className="font-heading text-sm uppercase tracking-[0.28em] text-[#9d7f4a]">Guest Perspective</p>
+          <h2 className="mt-5 font-display text-4xl text-[#102433] md:text-6xl">The experience should feel elevated before, during, and after the summit push.</h2>
+          <p className="mt-6 text-lg leading-8 text-[#64748b]">
+            These are the kinds of reactions you get when the route, support, and atmosphere all feel considered.
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="mt-14 grid gap-6 lg:grid-cols-[1.15fr_0.85fr_0.85fr]">
           {testimonials.map((testimonial, index) => (
-            <motion.div
+            <motion.article
               key={testimonial.name}
-              className="p-8 bg-gradient-to-br from-white to-[#faf8f5] rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border border-[#e8e4df]"
-              initial={{ opacity: 0, y: 30 }}
+              className={`rounded-[2rem] border border-[#eadfce] p-8 shadow-[0_20px_60px_rgba(31,41,55,0.06)] ${
+                index === 0 ? 'bg-[#173042] text-white' : 'bg-[#fbf7f1] text-[#102433]'
+              }`}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
             >
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: i * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <Star className="w-5 h-5 fill-[#b8860b] text-[#b8860b]" />
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Content */}
-              <p className="text-gray-600 mb-6 leading-relaxed italic">
-                "{testimonial.content}"
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-6 border-t border-[#e8e4df]">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full"
-                />
-                <div>
-                  <p className="font-heading text-[#1a1a1a] font-semibold">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {testimonial.role}
-                  </p>
+              <div className="mb-5 flex items-center justify-between">
+                <div className="flex gap-1">
+                  {Array.from({ length: 5 }).map((_, ratingIndex) => (
+                    <Star
+                      key={ratingIndex}
+                      className={`h-4 w-4 ${index === 0 ? 'fill-[#ddb04d] text-[#ddb04d]' : 'fill-[#b8860b] text-[#b8860b]'}`}
+                    />
+                  ))}
                 </div>
+                <Quote className={index === 0 ? 'text-white/30' : 'text-[#173042]/20'} size={28} />
               </div>
-            </motion.div>
+              <p className={`text-lg leading-8 ${index === 0 ? 'text-white/82' : 'text-[#475569]'}`}>
+                “{testimonial.content}”
+              </p>
+              <div className={`mt-8 border-t pt-6 ${index === 0 ? 'border-white/12' : 'border-[#eadfce]'}`}>
+                <p className="font-heading text-base">{testimonial.name}</p>
+                <p className={`mt-1 text-sm ${index === 0 ? 'text-white/56' : 'text-[#64748b]'}`}>{testimonial.role}</p>
+              </div>
+            </motion.article>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          className="mt-16 md:mt-24 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <motion.button
-            className="px-8 py-4 bg-[#1e3a4c] text-white font-heading rounded-lg hover:shadow-xl transition-all"
-            whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(30, 58, 76, 0.3)' }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Read More Success Stories
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   );
