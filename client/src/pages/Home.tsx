@@ -7,6 +7,7 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 /**
  * Home Page
@@ -34,6 +35,7 @@ export default function Home() {
         <FAQ />
       </div>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

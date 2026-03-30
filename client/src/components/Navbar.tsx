@@ -24,7 +24,7 @@ export default function Navbar() {
 
   const navClassName = isScrolled
     ? 'border-white/70 bg-[#f7f3ed]/88 shadow-[0_18px_60px_rgba(15,23,42,0.12)] backdrop-blur-xl'
-    : 'border-white/15 bg-white/8 backdrop-blur-md';
+    : 'border-transparent bg-transparent shadow-none backdrop-blur-none';
 
   const linkClassName = isScrolled
     ? 'text-[#173042] hover:text-[#b8860b]'
@@ -45,7 +45,13 @@ export default function Navbar() {
         className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border px-4 py-3 transition-all duration-300 md:px-6 ${navClassName}`}
       >
         <a href="#home" className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#173042] to-[#b8860b] text-white shadow-lg shadow-[#173042]/20">
+          <div
+            className={`flex h-11 w-11 items-center justify-center rounded-full text-white transition-all duration-300 ${
+              isScrolled
+                ? 'bg-gradient-to-br from-[#173042] to-[#b8860b] shadow-lg shadow-[#173042]/20'
+                : 'border border-white/20 bg-white/10 backdrop-blur-md'
+            }`}
+          >
             <Mountain size={20} />
           </div>
           <div className="hidden sm:block">
@@ -90,7 +96,7 @@ export default function Navbar() {
         <button
           type="button"
           className={`inline-flex h-11 w-11 items-center justify-center rounded-full transition lg:hidden ${
-            isScrolled ? 'bg-white text-[#173042]' : 'bg-white/10 text-white'
+            isScrolled ? 'bg-white text-[#173042]' : 'border border-white/15 bg-white/10 text-white backdrop-blur-md'
           }`}
           onClick={() => setIsMobileMenuOpen((open) => !open)}
           aria-label="Toggle navigation"
