@@ -12,31 +12,28 @@ interface StatItem {
 
 const stats: StatItem[] = [
   {
-    number: 38,
-    label: 'Peak departures shaped each year',
-    suffix: '+',
-    detail: 'Small, intentional schedules instead of overstuffed calendars.',
+    number: 8,
+    label: 'Signature climbs in the collection',
+    detail: 'A focused lineup across Khumbu, Annapurna, and Langtang instead of an overloaded catalog.',
     icon: <Mountain size={18} />,
   },
   {
-    number: 16,
-    label: 'Years building Himalaya itineraries',
-    suffix: '+',
-    detail: 'Route design grounded in weather, pacing, and local support.',
+    number: 4,
+    label: 'Flagship departures featured on the homepage',
+    detail: 'Start with the strongest routes, then expand into the full peak collection when ready.',
     icon: <TimerReset size={18} />,
   },
   {
-    number: 97,
-    label: 'Guests who return or refer friends',
-    suffix: '%',
-    detail: 'The experience is what keeps the reputation strong.',
+    number: 3,
+    label: 'Core Himalayan regions represented',
+    detail: 'Khumbu for iconic scale, Annapurna for route variety, and Langtang for shorter summit windows.',
     icon: <HeartHandshake size={18} />,
   },
   {
-    number: 4,
-    label: 'Clients max per lead guide on hard sections',
-    suffix: ':1',
-    detail: 'Cleaner support ratios where the mountain gets serious.',
+    number: 6,
+    label: 'High-altitude objectives above six thousand meters',
+    suffix: ',000m+',
+    detail: 'A collection built for trekkers and climbers stepping into genuine expedition terrain.',
     icon: <ShieldCheck size={18} />,
   },
 ];
@@ -102,12 +99,12 @@ export default function TrustStats() {
             transition={{ duration: 0.55 }}
             viewport={{ once: true }}
           >
-            <p className="font-heading text-sm uppercase tracking-[0.28em] text-[#9d7f4a]">Measured Confidence</p>
+            <p className="font-heading text-sm uppercase tracking-[0.28em] text-[#9d7f4a]">At A Glance</p>
             <h2 className="mt-5 font-display text-4xl text-[#102433] md:text-6xl">
-              The homepage should feel like a real mountain operator, not a brochure template.
+              Himalayan climbing trips presented with the clarity serious travelers need before they enquire.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[#5b6471]">
-              We rebuilt the flow around trust, route clarity, and visual atmosphere so the homepage reads like a premium Nepal brand with actual field experience behind it.
+              This collection is built around real trekking peaks, clear route fit, and practical trip structure so guests can understand the offer quickly and move toward planning with confidence.
             </p>
           </motion.div>
 

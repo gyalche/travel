@@ -14,49 +14,49 @@ interface HeroSlide {
 const slides: HeroSlide[] = [
   {
     location: 'Khumbu, Nepal',
-    summit: 'Everest region departures built for trekkers who want altitude with polish.',
-    copy: 'Small groups, serious mountain logistics, and routes that still feel cinematic at first light.',
+    summit: 'Everest region trekking peaks and high-altitude journeys planned with care.',
+    copy: 'Explore iconic Khumbu routes with structured acclimatization, experienced local support, and departures designed for travelers who want the Himalayas done properly.',
     image:
       'https://images.pexels.com/photos/10753291/pexels-photo-10753291.jpeg?auto=compress&cs=tinysrgb&w=1800',
     eyebrow: 'Spring 2026 departures',
-    cta: 'Explore Everest Region',
+    cta: 'Explore Khumbu Peaks',
   },
   {
-    location: 'Annapurna frontier',
-    summit: 'Big Himalayan landscapes, cleaner pacing, and camps chosen for the view as much as the climb.',
-    copy: 'We design each itinerary around acclimatization, weather windows, and the kind of detail premium travelers notice.',
+    location: 'Annapurna, Nepal',
+    summit: 'Annapurna climbs that combine dramatic landscapes with well-paced summit plans.',
+    copy: 'From Pisang Peak to Chulu East, these routes are built for guests who want strong scenery, steady altitude progression, and a more complete mountain journey.',
     image:
       'https://images.pexels.com/photos/29466873/pexels-photo-29466873.jpeg?auto=compress&cs=tinysrgb&w=1800',
-    eyebrow: 'Curated trekking peaks',
-    cta: 'Discover Annapurna Routes',
+    eyebrow: 'Annapurna departures',
+    cta: 'Discover Annapurna Climbs',
   },
   {
-    location: 'Sacred mountain routes',
-    summit: 'The hero shot should feel earned. So should the journey that gets you there.',
-    copy: 'From permit handling to lead guides, the experience is structured like an expedition and presented like a luxury escape.',
+    location: 'Private & Custom Trips',
+    summit: 'Custom departures for trekkers, climbers, families, and private teams heading to Nepal.',
+    copy: 'We can tailor pace, comfort level, route choice, and support structure for guests who want a more personal Himalayan itinerary.',
     image:
       'https://images.pexels.com/photos/30462129/pexels-photo-30462129.jpeg?auto=compress&cs=tinysrgb&w=1800',
-    eyebrow: 'Editorial mountain journeys',
-    cta: 'Plan a Private Departure',
+    eyebrow: 'Tailored itineraries',
+    cta: 'Plan A Custom Trip',
   },
 ];
 
 const galleryCards = [
   {
-    title: 'Dawn ridgelines',
-    subtitle: 'Early starts, clear air, wide horizons.',
+    title: 'Mera Peak',
+    subtitle: 'A quieter 6,476m objective with expansive glacier views.',
     image:
       'https://images.pexels.com/photos/29466873/pexels-photo-29466873.jpeg?auto=compress&cs=tinysrgb&w=900',
   },
   {
-    title: 'Higher camps',
-    subtitle: 'Sharper terrain and tighter support.',
+    title: 'Lobuche East',
+    subtitle: 'A sharper Khumbu climb for trekkers moving into technical terrain.',
     image:
       'https://images.pexels.com/photos/30462129/pexels-photo-30462129.jpeg?auto=compress&cs=tinysrgb&w=900',
   },
   {
-    title: 'Remote approach trails',
-    subtitle: 'Big days without package-tour energy.',
+    title: 'Pisang Peak',
+    subtitle: 'An Annapurna route with strong scenery and a rewarding summit profile.',
     image:
       'https://images.pexels.com/photos/14335289/pexels-photo-14335289.jpeg?auto=compress&cs=tinysrgb&w=900',
   },
@@ -157,17 +157,17 @@ export default function HeroSlider() {
                 <div className="rounded-[1.75rem] border border-white/12 bg-white/8 p-5 backdrop-blur-md">
                   <Mountain className="mb-3 text-[#ddb04d]" size={20} />
                   <p className="font-heading text-2xl text-white">6,000m+</p>
-                  <p className="mt-1 text-sm text-white/66">Trekking-peak itineraries with real expedition pacing.</p>
+                  <p className="mt-1 text-sm text-white/66">Trekking peaks and summit objectives across Nepal.</p>
                 </div>
                 <div className="rounded-[1.75rem] border border-white/12 bg-white/8 p-5 backdrop-blur-md">
                   <ShieldCheck className="mb-3 text-[#ddb04d]" size={20} />
-                  <p className="font-heading text-2xl text-white">1:4</p>
-                  <p className="mt-1 text-sm text-white/66">Guide-to-climber support on demanding sections.</p>
+                  <p className="font-heading text-2xl text-white">Nepal</p>
+                  <p className="mt-1 text-sm text-white/66">Khumbu, Annapurna, and Langtang departures.</p>
                 </div>
                 <div className="rounded-[1.75rem] border border-white/12 bg-white/8 p-5 backdrop-blur-md">
                   <Compass className="mb-3 text-[#ddb04d]" size={20} />
                   <p className="font-heading text-2xl text-white">Custom</p>
-                  <p className="mt-1 text-sm text-white/66">Flexible acclimatization and route planning around conditions.</p>
+                  <p className="mt-1 text-sm text-white/66">Private trips, custom pacing, and tailored itinerary support.</p>
                 </div>
               </div>
 
@@ -216,7 +216,6 @@ export default function HeroSlider() {
               <div className="mb-4 flex items-center justify-between px-2">
                 <div>
                   <p className="font-heading text-xs uppercase tracking-[0.3em] text-white/58">Featured Departures</p>
-                  <p className="mt-1 font-display text-2xl text-white">Carousel highlights</p>
                 </div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#ddb04d]/14 px-3 py-1 text-xs font-heading uppercase tracking-[0.24em] text-[#f0ca7a]">
                   <Stars size={14} />

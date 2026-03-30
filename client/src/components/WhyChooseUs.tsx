@@ -11,31 +11,31 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: <Shield size={22} />,
-    title: 'Safety that feels disciplined, not performative',
-    description: 'Acclimatization, weather judgment, and support ratios are built into the itinerary instead of treated like fine print.',
+    title: 'Safety-first itinerary design',
+    description: 'Every climb is structured around acclimatization, mountain conditions, and practical decision-making rather than rushed summit promises.',
   },
   {
     icon: <Compass size={22} />,
-    title: 'Routes chosen for experience as much as summit value',
-    description: 'We focus on approach quality, camp placement, visual payoff, and how the journey actually unfolds day by day.',
+    title: 'Routes with real character',
+    description: 'Our departures focus on iconic approaches, rewarding summit lines, and mountain days that feel memorable beyond the summit photo.',
   },
   {
     icon: <Activity size={22} />,
-    title: 'Pacing designed around real human energy',
-    description: 'Hard days land where they should. Recovery days feel intentional. The trip never reads like a rushed spreadsheet.',
+    title: 'Pacing built for altitude',
+    description: 'Trek days, rest windows, and summit movement are paced to help trekkers and climbers perform well as the route gains height.',
   },
   {
     icon: <Stars size={22} />,
-    title: 'Premium travel standards without losing mountain edge',
-    description: 'Cleaner logistics, sharper communication, and better finishing details without turning the route into a soft package.',
+    title: 'Professional service without losing expedition spirit',
+    description: 'Clear communication, organized logistics, and thoughtful support give the journey polish while keeping the mountain experience authentic.',
   },
 ];
 
 const framework = [
-  'Pre-departure prep and packing guidance',
-  'Local guide teams with route familiarity',
-  'Altitude rhythm built around performance',
-  'Private departure customization on request',
+  'Pre-departure planning and equipment guidance',
+  'Local teams with route knowledge and mountain judgment',
+  'Acclimatization schedules shaped around altitude gain',
+  'Private departures and custom pacing available on request',
 ];
 
 export default function WhyChooseUs() {
@@ -51,10 +51,10 @@ export default function WhyChooseUs() {
           >
             <p className="font-heading text-sm uppercase tracking-[0.3em] text-[#ddb04d]">Why Us</p>
             <h2 className="mt-5 font-display text-4xl md:text-6xl">
-              The difference is in how the trip is designed before you ever step on trail.
+              A strong Himalayan trip is built long before the summit push begins.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-white/70">
-              Most operators sell a summit. Better operators shape the full arc: the buildup, the confidence, the support, and the feeling you leave with afterward.
+              The best departures are not only about reaching the top. They are about route choice, planning quality, acclimatization, guide support, and the confidence guests feel throughout the journey.
             </p>
 
             <div className="mt-8 overflow-hidden rounded-[2rem] border border-white/10 bg-white/6">

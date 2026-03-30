@@ -22,10 +22,10 @@ export default function FeaturedPeaks() {
             Himalayan Peaks
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-[#1a1a1a] mb-6">
-            Proper mountain journeys, not generic packages
+            Trekking peaks designed for travelers who want more than a standard lodge trek
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Start with the four standout departures below. Expand the collection when you want more routes, then open any peak for the full itinerary mood, route structure, and guest fit.
+            Explore our most requested Himalayan departures, from first 6,000-meter objectives to more technical climbs in the Khumbu and Annapurna regions.
           </p>
         </motion.div>
 

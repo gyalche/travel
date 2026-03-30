@@ -3,22 +3,22 @@ import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Daniel Foster',
-    role: 'Lobuche East climber',
+    name: 'Expert Route Guidance',
+    role: 'Find the right peak for your experience and goals',
     content:
-      'The route felt refined from day one. Nothing was overpromised, everything was handled cleanly, and by summit day the whole team felt calm instead of chaotic.',
+      'We help you choose the right climb based on altitude, technical level, trip duration, and the kind of mountain experience you want in Nepal.',
   },
   {
-    name: 'Mei Tan',
-    role: 'Mera Peak guest',
+    name: 'Thoughtful Trip Planning',
+    role: 'Preparation built around acclimatization and timing',
     content:
-      'I booked because the visuals were beautiful, but what sold me afterward was the pacing. The trip had style, but it also had real mountain intelligence behind it.',
+      'Every itinerary is planned with attention to acclimatization, route pacing, seasonal conditions, and the practical details that make a Himalayan trip run smoothly.',
   },
   {
-    name: 'Arjun Kapoor',
-    role: 'Private Annapurna departure',
+    name: 'Reliable Local Support',
+    role: 'Clear communication from enquiry to summit day',
     content:
-      'Most operators talk about logistics. This team made logistics disappear. We were free to experience the landscape because the details were already tight.',
+      'From your first enquiry to your final day in the mountains, we focus on responsive communication, organized logistics, and dependable support on the ground.',
   },
 ];
 
@@ -33,10 +33,12 @@ export default function Testimonials() {
           transition={{ duration: 0.55 }}
           viewport={{ once: true }}
         >
-          <p className="font-heading text-sm uppercase tracking-[0.28em] text-[#9d7f4a]">Guest Perspective</p>
-          <h2 className="mt-5 font-display text-4xl text-[#102433] md:text-6xl">The experience should feel elevated before, during, and after the summit push.</h2>
+          <p className="font-heading text-sm uppercase tracking-[0.28em] text-[#9d7f4a]">What Matters Most</p>
+          <h2 className="mt-5 font-display text-4xl text-[#102433] md:text-6xl">
+            Why trekkers and climbers choose us for Himalayan peak journeys in Nepal.
+          </h2>
           <p className="mt-6 text-lg leading-8 text-[#64748b]">
-            These are the kinds of reactions you get when the route, support, and atmosphere all feel considered.
+            We focus on the things experienced travelers care about most: the right route, honest preparation, and dependable support from first enquiry to summit day.
           </p>
         </motion.div>
 
@@ -64,7 +66,7 @@ export default function Testimonials() {
                 <Quote className={index === 0 ? 'text-white/30' : 'text-[#173042]/20'} size={28} />
               </div>
               <p className={`text-lg leading-8 ${index === 0 ? 'text-white/82' : 'text-[#475569]'}`}>
-                “{testimonial.content}”
+                {testimonial.content}
               </p>
               <div className={`mt-8 border-t pt-6 ${index === 0 ? 'border-white/12' : 'border-[#eadfce]'}`}>
                 <p className="font-heading text-base">{testimonial.name}</p>

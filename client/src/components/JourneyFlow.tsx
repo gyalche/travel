@@ -3,23 +3,23 @@ import { Backpack, BedDouble, MountainSnow, RadioTower } from 'lucide-react';
 
 const steps = [
   {
-    title: 'Choose your route',
-    description: 'Start with four curated peaks, compare style and difficulty, then open the detail pages when you want the full story.',
+    title: 'Choose the right peak',
+    description: 'Compare region, altitude, duration, and technical level to find the route that matches your experience and goals.',
     icon: <Backpack size={20} />,
   },
   {
-    title: 'Shape the departure',
-    description: 'Adjust pace, comfort level, acclimatization days, or make it private if your group needs a cleaner fit.',
+    title: 'Plan the departure',
+    description: 'We help you choose the best season, trip format, and acclimatization rhythm for your group or private team.',
     icon: <BedDouble size={20} />,
   },
   {
-    title: 'Climb with support',
-    description: 'Guides, permits, route rhythm, and summit windows are already structured so the guest experience stays calm.',
+    title: 'Arrive prepared',
+    description: 'Before departure you receive guidance on equipment, fitness expectations, permits, and what daily life on the route looks like.',
     icon: <MountainSnow size={20} />,
   },
   {
-    title: 'Stay connected on trip',
-    description: 'Communication, weather updates, and field coordination stay active instead of disappearing once the booking is paid.',
+    title: 'Climb with confidence',
+    description: 'On the mountain, the trip runs through local logistics, guide coordination, and day-by-day decisions shaped by conditions.',
     icon: <RadioTower size={20} />,
   },
 ];
@@ -35,12 +35,12 @@ export default function JourneyFlow() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <p className="font-heading text-sm uppercase tracking-[0.28em] text-[#9d7f4a]">Better UX</p>
+          <p className="font-heading text-sm uppercase tracking-[0.28em] text-[#9d7f4a]">How It Works</p>
           <h2 className="mt-5 font-display text-4xl text-[#102433] md:text-6xl">
-            The homepage should make the booking journey obvious without feeling mechanical.
+            From first enquiry to summit day, the process should feel clear, personal, and well organized.
           </h2>
           <p className="mt-6 text-lg leading-8 text-[#64748b]">
-            Strong UI is not only about bigger images. It is about helping the right traveler understand the product quickly, then giving them a confident next step.
+            The right trip starts with honest route selection and continues with practical preparation, responsive planning, and strong support on the ground in Nepal.
           </p>
         </motion.div>
 
