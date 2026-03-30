@@ -41,7 +41,7 @@ export default function FAQ() {
             <p className="font-heading text-sm uppercase tracking-[0.28em] text-[#9d7f4a]">FAQ</p>
             <h2 className="mt-5 font-display text-4xl text-[#102433] md:text-6xl">Questions people ask before committing to a serious Nepal departure.</h2>
             <p className="mt-6 max-w-lg text-lg leading-8 text-[#64748b]">
-              This section is kept tighter and cleaner now. It should help serious guests understand the operator quickly instead of forcing them through a generic accordion wall.
+              These are the practical questions most guests raise before confirming a trekking peak or private Himalayan climbing itinerary.
             </p>
           </motion.div>
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowRight, Menu, Mountain, Phone, X } from 'lucide-react';
+import { ArrowRight, Menu, Mountain, X } from 'lucide-react';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -9,6 +9,22 @@ const navItems = [
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'FAQ', href: '#faq' },
 ];
+
+const whatsappLink = 'https://wa.me/18453263377';
+
+function WhatsAppIcon({ className = 'h-5 w-5' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M19.11 17.22c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.04-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.48-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.47.07-.72.34-.24.27-.94.92-.94 2.25s.96 2.62 1.09 2.8c.13.18 1.88 2.87 4.55 4.02.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.58-.64 1.81-1.26.22-.62.22-1.15.16-1.26-.07-.11-.24-.18-.51-.31Z" />
+      <path d="M16 3C8.82 3 3 8.82 3 16c0 2.54.73 4.99 2.12 7.1L3.1 28.9l5.94-1.95A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3Zm0 23.64c-2.04 0-4.03-.55-5.76-1.6l-.41-.24-3.52 1.16 1.15-3.43-.27-.43A10.56 10.56 0 0 1 5.36 16c0-5.87 4.77-10.64 10.64-10.64 2.84 0 5.5 1.11 7.5 3.12A10.53 10.53 0 0 1 26.64 16c0 5.87-4.77 10.64-10.64 10.64Z" />
+    </svg>
+  );
+}
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,11 +94,13 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href="#faq"
-            className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-heading transition-all ${secondaryCtaClassName}`}
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition-all ${secondaryCtaClassName}`}
+            aria-label="Open WhatsApp chat"
           >
-            <Phone size={15} />
-            Plan With Us
+            <WhatsAppIcon className="h-5 w-5" />
           </a>
           <a
             href="#peaks"
@@ -129,11 +147,14 @@ export default function Navbar() {
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <a
-                href="#faq"
-                className="rounded-2xl border border-[#173042]/12 bg-white px-4 py-3 text-center font-heading text-[#173042]"
+                href={whatsappLink}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-2xl border border-[#173042]/12 bg-white px-4 py-3 text-[#173042]"
                 onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Open WhatsApp chat"
               >
-                Plan With Us
+                <WhatsAppIcon className="h-5 w-5" />
               </a>
               <a
                 href="#peaks"

@@ -17,21 +17,21 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-16">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end">
             <div>
-              <p className="font-heading text-sm uppercase tracking-[0.28em] text-[#ddb04d]">Final Call</p>
+              <p className="font-heading text-sm uppercase tracking-[0.28em] text-[#ddb04d]">Start Planning</p>
               <h2 className="mt-5 font-display text-4xl md:text-6xl">
-                Build a homepage that makes the brand feel worth the flight to Nepal.
+                Ready to plan your next Himalayan trekking peak or private departure?
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68">
-                The footer now closes the page like a premium travel brand instead of defaulting to a basic website template. Contact, route access, and brand tone stay consistent all the way down.
+                Speak with us about route selection, season timing, private departures, or the right first 6,000-meter objective for your team.
               </p>
             </div>
 
             <div className="rounded-[2rem] border border-white/10 bg-white/6 p-6 backdrop-blur-sm">
               <p className="font-heading text-xs uppercase tracking-[0.24em] text-[#ddb04d]">Quick Contact</p>
               <div className="mt-5 space-y-4 text-sm text-white/74">
-                <a href="tel:+977-9800000000" className="flex items-center gap-3 transition hover:text-white">
+                <a href="tel:+18453263377" className="flex items-center gap-3 transition hover:text-white">
                   <Phone size={16} className="text-[#ddb04d]" />
-                  +977 9800 000 000
+                  +1 (845) 326-3377
                 </a>
                 <a href="mailto:hello@himalayantrekkingpeaks.com" className="flex items-center gap-3 transition hover:text-white">
                   <Mail size={16} className="text-[#ddb04d]" />
@@ -60,7 +60,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              Trekking peaks and high-altitude departures with cleaner design, clearer logistics, and a stronger sense of place.
+              Guided trekking peaks and Himalayan climbing journeys across Nepal, built around clear planning, strong local support, and memorable mountain days.
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <p>&copy; {currentYear} Himalayan Peaks. All rights reserved.</p>
-          <p>Crafted for modern Himalayan departures.</p>
+          <p>Kathmandu, Nepal</p>
         </motion.div>
       </div>
     </footer>
