@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowRight, Compass, Mountain, ShieldCheck, Stars } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Compass, Mountain, ShieldCheck, Stars } from 'lucide-react';
 
 interface HeroSlide {
   location: string;
@@ -8,6 +8,7 @@ interface HeroSlide {
   copy: string;
   image: string;
   eyebrow: string;
+  cta: string;
 }
 
 const slides: HeroSlide[] = [
@@ -18,6 +19,7 @@ const slides: HeroSlide[] = [
     image:
       'https://images.pexels.com/photos/10753291/pexels-photo-10753291.jpeg?auto=compress&cs=tinysrgb&w=1800',
     eyebrow: 'Spring 2026 departures',
+    cta: 'Explore Everest Region',
   },
   {
     location: 'Annapurna frontier',
@@ -26,6 +28,7 @@ const slides: HeroSlide[] = [
     image:
       'https://images.pexels.com/photos/29466873/pexels-photo-29466873.jpeg?auto=compress&cs=tinysrgb&w=1800',
     eyebrow: 'Curated trekking peaks',
+    cta: 'Discover Annapurna Routes',
   },
   {
     location: 'Sacred mountain routes',
@@ -34,6 +37,7 @@ const slides: HeroSlide[] = [
     image:
       'https://images.pexels.com/photos/30462129/pexels-photo-30462129.jpeg?auto=compress&cs=tinysrgb&w=1800',
     eyebrow: 'Editorial mountain journeys',
+    cta: 'Plan a Private Departure',
   },
 ];
 
@@ -70,6 +74,13 @@ export default function HeroSlider() {
   }, []);
 
   const activeSlide = slides[currentSlide];
+  const handleSlideChange = (direction: 'prev' | 'next') => {
+    setCurrentSlide((prev) =>
+      direction === 'next'
+        ? (prev + 1) % slides.length
+        : (prev - 1 + slides.length) % slides.length
+    );
+  };
 
   return (
     <section id="home" className="relative isolate min-h-screen overflow-hidden bg-[#08131b] text-white">
@@ -91,7 +102,7 @@ export default function HeroSlider() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-4 pb-10 pt-32 md:px-6 md:pt-36">
+      <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-4 py-28 md:px-6 md:py-32">
         <div className="grid w-full items-end gap-10 lg:grid-cols-[minmax(0,1.2fr)_420px]">
           <div className="max-w-3xl">
             <motion.div
@@ -100,6 +111,13 @@ export default function HeroSlider() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55 }}
             >
+              <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/14 bg-black/18 px-4 py-2 backdrop-blur-md">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#ddb04d]" />
+                <span className="font-heading text-[0.68rem] uppercase tracking-[0.32em] text-white/82">
+                  Booking for 2026 now open
+                </span>
+              </div>
+
               <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/10 px-4 py-2 backdrop-blur-md">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#b8860b]" />
                 <span className="font-heading text-xs uppercase tracking-[0.32em] text-white/85">
@@ -111,7 +129,7 @@ export default function HeroSlider() {
                 {activeSlide.location}
               </p>
 
-              <h1 className="max-w-4xl text-5xl leading-[0.95] text-white md:text-7xl lg:text-[5.8rem]">
+              <h1 className="max-w-4xl text-5xl leading-[0.95] text-white md:text-7xl lg:text-[5.4rem]">
                 {activeSlide.summit}
               </h1>
 
@@ -124,7 +142,7 @@ export default function HeroSlider() {
                   href="#peaks"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[#b8860b] px-7 py-4 font-heading text-white shadow-[0_24px_55px_rgba(184,134,11,0.38)] transition-transform hover:-translate-y-0.5"
                 >
-                  Explore Peak Collection
+                  {activeSlide.cta}
                   <ArrowRight size={18} />
                 </a>
                 <a
@@ -152,6 +170,44 @@ export default function HeroSlider() {
                   <p className="mt-1 text-sm text-white/66">Flexible acclimatization and route planning around conditions.</p>
                 </div>
               </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => handleSlideChange('prev')}
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/16 bg-black/18 text-white backdrop-blur-md transition hover:bg-white/14"
+                  aria-label="Previous slide"
+                >
+                  <ArrowLeft size={18} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleSlideChange('next')}
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/16 bg-black/18 text-white backdrop-blur-md transition hover:bg-white/14"
+                  aria-label="Next slide"
+                >
+                  <ArrowRight size={18} />
+                </button>
+                <div className="flex flex-wrap gap-3">
+                  {slides.map((slide, index) => (
+                    <button
+                      key={slide.location}
+                      type="button"
+                      onClick={() => setCurrentSlide(index)}
+                      className={`rounded-full border px-4 py-2 text-left transition ${
+                        index === currentSlide
+                          ? 'border-white/22 bg-white/16 text-white'
+                          : 'border-white/10 bg-black/16 text-white/72 hover:bg-white/10'
+                      }`}
+                      aria-label={`Show slide ${index + 1}`}
+                    >
+                      <span className="font-heading text-[0.68rem] uppercase tracking-[0.24em]">
+                        {slide.location}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </div>
 
@@ -159,12 +215,12 @@ export default function HeroSlider() {
             <div className="rounded-[2rem] border border-white/12 bg-white/10 p-4 shadow-[0_28px_80px_rgba(4,12,18,0.4)] backdrop-blur-xl">
               <div className="mb-4 flex items-center justify-between px-2">
                 <div>
-                  <p className="font-heading text-xs uppercase tracking-[0.3em] text-white/58">Visual Route Notes</p>
-                  <p className="mt-1 font-display text-2xl text-white">What the journey feels like</p>
+                  <p className="font-heading text-xs uppercase tracking-[0.3em] text-white/58">Featured Departures</p>
+                  <p className="mt-1 font-display text-2xl text-white">Carousel highlights</p>
                 </div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#ddb04d]/14 px-3 py-1 text-xs font-heading uppercase tracking-[0.24em] text-[#f0ca7a]">
                   <Stars size={14} />
-                  New Hero
+                  Live
                 </div>
               </div>
 
@@ -197,19 +253,6 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-2">
-        {slides.map((slide, index) => (
-          <button
-            key={slide.location}
-            type="button"
-            onClick={() => setCurrentSlide(index)}
-            className={`h-2.5 rounded-full transition-all ${
-              index === currentSlide ? 'w-10 bg-[#ddb04d]' : 'w-2.5 bg-white/40'
-            }`}
-            aria-label={`Show slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </section>
   );
 }

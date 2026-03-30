@@ -97,9 +97,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <p>&copy; {currentYear} Himalayan Peaks. All rights reserved.</p>
-          <a href="#home" className="transition hover:text-white/74">
-            Back to top
-          </a>
+          <p>Crafted for modern Himalayan departures.</p>
         </motion.div>
       </div>
     </footer>

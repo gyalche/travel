@@ -43,12 +43,6 @@ export default function FAQ() {
             <p className="mt-6 max-w-lg text-lg leading-8 text-[#64748b]">
               This section is kept tighter and cleaner now. It should help serious guests understand the operator quickly instead of forcing them through a generic accordion wall.
             </p>
-            <a
-              href="#home"
-              className="mt-8 inline-flex rounded-full bg-[#173042] px-6 py-3 font-heading text-white shadow-[0_18px_50px_rgba(23,48,66,0.16)]"
-            >
-              Return to top
-            </a>
           </motion.div>
 
           <div className="space-y-4">
