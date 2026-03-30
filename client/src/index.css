@@ -1,0 +1,251 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Modern Luxury Expedition Color Palette */
+  --primary: #1e3a4c; /* Deep teal (glacier water) */
+  --primary-foreground: #f5f1ed; /* Cream */
+  --sidebar-primary: #2d5a6f;
+  --sidebar-primary-foreground: #f5f1ed;
+  --accent: #b8860b; /* Warm copper/bronze */
+  --accent-foreground: #f5f1ed;
+  --chart-1: #2d5a6f;
+  --chart-2: #1e3a4c;
+  --chart-3: #b8860b;
+  --chart-4: #3d4a52;
+  --chart-5: #2a2a2a;
+  --radius: 0.5rem;
+  --background: #faf8f5; /* Cream background */
+  --foreground: #1a1a1a; /* Charcoal text */
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --secondary: #3d4a52; /* Charcoal */
+  --secondary-foreground: #f5f1ed;
+  --muted: #e8e4df; /* Light gray */
+  --muted-foreground: #6b6b6b;
+  --destructive: #d32f2f;
+  --destructive-foreground: #f5f1ed;
+  --border: #e8e4df;
+  --input: #f5f1ed;
+  --ring: #b8860b;
+  --sidebar: #f5f1ed;
+  --sidebar-foreground: #1a1a1a;
+  --sidebar-accent: #b8860b;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: #e8e4df;
+  --sidebar-ring: #b8860b;
+}
+
+.dark {
+  --background: #0f1419; /* Deep charcoal */
+  --foreground: #f5f1ed;
+  --card: #1a1f28;
+  --card-foreground: #f5f1ed;
+  --popover: #1a1f28;
+  --popover-foreground: #f5f1ed;
+  --secondary: #2d3a47;
+  --secondary-foreground: #e8e4df;
+  --muted: #3d4a52;
+  --muted-foreground: #b0b0b0;
+  --accent: #b8860b;
+  --accent-foreground: #f5f1ed;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #0f1419;
+  --border: #2d3a47;
+  --input: #1a1f28;
+  --ring: #b8860b;
+  --sidebar: #1a1f28;
+  --sidebar-foreground: #f5f1ed;
+  --sidebar-accent: #b8860b;
+  --sidebar-accent-foreground: #0f1419;
+  --sidebar-border: #2d3a47;
+  --sidebar-ring: #b8860b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+  h3 {
+    @apply text-3xl md:text-4xl;
+  }
+  h4 {
+    @apply text-2xl md:text-3xl;
+  }
+  .font-display {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+  .font-heading {
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+  }
+  .font-body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+  .font-serif {
+    font-family: 'Lora', serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+
+  /* Premium animation utilities */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+  }
+}
